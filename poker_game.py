@@ -11,7 +11,11 @@ class PokerGame:
     
     #initialize the game
     def __init__(self):
-        self.number_of_players = int(input("Number of Players? "))
+        try:
+            self.number_of_players = int(input("Number of Players? "))
+        except ValueError: # We will catch ValueErrors but not other kinds of errors
+            print("Error: This is not a valid number of players")
+        
         
     #create a list of all the players in the game
     def names(self):
@@ -19,6 +23,7 @@ class PokerGame:
         for i in range(self.number_of_players):
             name = input(f"Player {i+1}: ")
             self.players_list.append(name)
+    
     
     #deal out cards to each player in the game
     def deal_cards(self):
@@ -78,12 +83,18 @@ class PokerGame:
             
         print(self.print_version_hand)
 
+
     #compares the hands of all the players and finds the winner
     def compare_cards(self):
         z = 0
         self.winners = self.players_list.copy()
         
-        #
+        #goes through each player's hand and checks to see if their highest
+        #number is larger than the max. if it is larger, they become the new
+        #winner. if it is the same, they are added to the winners list, 
+        #illustrating a tie. this loops through all 5 of the players cards, 
+        #stopping when there is only one winner or when all of the cards
+        #have been compared.
         while (z < 5) and (len(self.winners) > 1):
             max = 1
             for i in self.winners:
@@ -95,7 +106,7 @@ class PokerGame:
                         self.winners.append(i)
             z += 1
             
-        print(self.winners[0])
+        print("The winner is: " + self.winners[0])
 
 
 def main(game):
