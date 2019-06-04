@@ -41,3 +41,17 @@ In order to make a poker game, you have to follow a couple of steps:
    o	Using a while list, continue this process for all five cards in each hand for as long as the winners list is greater than one (as this illustrates that there is still a tie)
   
    o	Finally, there should be only one player remaining in the winners list and this is the final winner of the poker game
+
+
+------------------------------------------------------------------------------------------------
+# Feedback: 
+------------------------------------------------------------------------------------------------
+
+| Section | Mark | 
+|---|---| 
+| Blog | 100% | 
+| Poker Game | 100% |
+||| 
+| Total/100% | 100% | 
+
+Nice Kat!
